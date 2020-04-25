@@ -33,6 +33,7 @@ public class PlayerControl : MonoBehaviour
         Vector2 position = transform.position;
         position.x = position.x + 2.8f * horizontal * Time.deltaTime;
         transform.position = position;
+        transform.rotation = Quaternion.identity;
 
         if (IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)))
         {
