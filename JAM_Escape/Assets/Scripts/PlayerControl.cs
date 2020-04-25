@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     public Rigidbody2D rigidbody2d;
     public BoxCollider2D boxCollider2d;
     private SpriteRenderer renderer;
+    public GameObject Garbage;
     float jumpVelocity;
     bool doubleJump;
 
@@ -62,6 +63,11 @@ public class PlayerControl : MonoBehaviour
             return false;
         else
             return true;
+    }
+
+    public void GarbageCheck()
+    {
+        gameObject.SetActive(false);
     }
 
     public void RechargeJump()
