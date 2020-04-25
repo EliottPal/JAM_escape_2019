@@ -37,9 +37,7 @@ public class PlayerControl : MonoBehaviour
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
         }
         if (Input.GetKey(KeyCode.S))
-        {
             animator.SetBool("IsCrouch", true);
-        }
         else
             animator.SetBool("IsCrouch", false);
         if (IsGrounded())

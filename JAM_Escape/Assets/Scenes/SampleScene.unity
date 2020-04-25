@@ -479,5 +479,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   animator: {fileID: 1507480359}
-  rigidbody2d: {fileID: 0}
+  rigidbody2d: {fileID: 1507480356}
   boxCollider2d: {fileID: 1507480355}
