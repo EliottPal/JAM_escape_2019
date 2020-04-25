@@ -33,10 +33,10 @@ public class PlayerControl : MonoBehaviour
 
         if (IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)))
         {
-            jumpVelocity = 3f;
+            jumpVelocity = 4f;
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
             animator.SetBool("IsCrouch", true);
         else
             animator.SetBool("IsCrouch", false);
