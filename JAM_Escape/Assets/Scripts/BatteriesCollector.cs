@@ -12,6 +12,7 @@ public class BatteriesCollector : MonoBehaviour
 
         if (controller != null)
         {
+            controller.RechargeJump();
             Collect.Play();
             gameObject.SetActive(false);
         }

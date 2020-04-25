@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     public BoxCollider2D boxCollider2d;
     private SpriteRenderer renderer;
     float jumpVelocity;
+    bool doubleJump;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class PlayerControl : MonoBehaviour
         renderer = gameObject.GetComponent<SpriteRenderer>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        doubleJump = true;
     }
 
     // Update is called once per frame
@@ -36,6 +38,13 @@ public class PlayerControl : MonoBehaviour
             jumpVelocity = 4f;
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
         }
+        if (!IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)) && doubleJump)
+        {
+            doubleJump = false;
+            jumpVelocity = 4f;
+            rigidbody2d.velocity = Vector2.up * jumpVelocity;
+        }
+
         if (Input.GetKeyDown(KeyCode.S))
             animator.SetBool("IsCrouch", true);
         else
@@ -53,5 +62,10 @@ public class PlayerControl : MonoBehaviour
             return false;
         else
             return true;
+    }
+
+    public void RechargeJump()
+    {
+        doubleJump = true;
     }
 }
