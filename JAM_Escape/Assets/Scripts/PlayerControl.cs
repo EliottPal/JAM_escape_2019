@@ -27,6 +27,8 @@ public class PlayerControl : MonoBehaviour
     bool checkEnd;
     bool checkEndLast;
 
+    public GameObject hddI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -139,6 +141,9 @@ public class PlayerControl : MonoBehaviour
         transform.position = originalPos;
         laser.transform.position = laserPos;
         mainCamera.transform.position = camPos;
+        haveHDD = false;
+        laser.SetActive(false);
+        hddI.SetActive(true);
         mainMusic.Play();
         gameOverUI.SetActive(false);
     }

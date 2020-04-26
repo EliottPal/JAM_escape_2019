@@ -19783,6 +19783,7 @@ MonoBehaviour:
   mainCamera: {fileID: 774997399}
   laser: {fileID: 1178023175}
   mainMusic: {fileID: 245714410}
+  hddI: {fileID: 2109783011}
 --- !u!61 &874291681
 BoxCollider2D:
   m_ObjectHideFlags: 0
