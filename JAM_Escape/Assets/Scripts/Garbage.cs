@@ -14,6 +14,7 @@ public class Garbage : MonoBehaviour
     {
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         transform.position = new Vector3(Random.Range(-3.95f, 3.95f), 15.9f, 0f);
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,6 +43,7 @@ public class Garbage : MonoBehaviour
         if (controller != null)
         {
             controller.GarbageCheck();
+            Restart();
             gameObject.SetActive(false);
             controller.LaserCheck();
         }

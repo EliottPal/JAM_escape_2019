@@ -193,7 +193,8 @@ public class PlayerControl : MonoBehaviour
         bat1.SetActive(true);
         bat2.SetActive(true);
         bat3.SetActive(true);
-        garb1.SetActive(true);
+        garb1.GetComponent<Garbage>().Restart();
+        garb1.SetActive(false);
         mainMusic.Play();
         gameOverUI.SetActive(false);
         checkFirst = true;
@@ -217,6 +218,7 @@ public class PlayerControl : MonoBehaviour
             yield return new WaitForSeconds(1);
             haveHDD = true;
             laser.SetActive(true);
+            garb1.SetActive(true);
         }
     }
 }
