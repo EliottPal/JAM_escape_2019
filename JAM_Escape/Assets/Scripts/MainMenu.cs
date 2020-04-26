@@ -10,6 +10,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("BuildingScene");
     }
 
+    public void CredsScene() {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void QuitGame() {
         Debug.Log("Quitting game");
         Application.Quit();
