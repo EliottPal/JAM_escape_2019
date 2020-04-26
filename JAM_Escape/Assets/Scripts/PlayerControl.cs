@@ -135,6 +135,7 @@ public class PlayerControl : MonoBehaviour
             animator.SetFloat("Horizontal", 1f);
             animator.SetBool("IsJumping", false);
             levelComplete.SetActive(true);
+            mainMusic.Stop();
             victory.Play();
         }
         if (checkStop == true)

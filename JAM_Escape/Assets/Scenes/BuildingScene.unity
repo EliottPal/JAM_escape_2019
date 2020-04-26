@@ -20264,7 +20264,7 @@ MonoBehaviour:
   boxCollider2d: {fileID: 874291681}
   Garbage: {fileID: 0}
   alert: {fileID: 674532564}
-  victory: {fileID: 0}
+  victory: {fileID: 626643834}
   haveHDD: 0
   death: {fileID: 2064979012}
   gameOverUI: {fileID: 912492816}
