@@ -19268,6 +19268,7 @@ MonoBehaviour:
   gameOverUI: {fileID: 912492816}
   mainCamera: {fileID: 774997399}
   laser: {fileID: 1178023175}
+  mainMusic: {fileID: 245714410}
 --- !u!61 &874291681
 BoxCollider2D:
   m_ObjectHideFlags: 0

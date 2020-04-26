@@ -21,6 +21,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject laser;
     Vector3 camPos;
     Vector3 laserPos;
+    public AudioSource mainMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +87,7 @@ public class PlayerControl : MonoBehaviour
     public void LaserCheck()
     {
         death.Play();
+        mainMusic.Stop();
         gameObject.SetActive(false);
         gameOverUI.SetActive(true);
         Time.timeScale = 0f;
@@ -97,6 +99,7 @@ public class PlayerControl : MonoBehaviour
         transform.position = originalPos;
         laser.transform.position = laserPos;
         mainCamera.transform.position = camPos;
+        mainMusic.Play();
         gameOverUI.SetActive(false);
     }
 
