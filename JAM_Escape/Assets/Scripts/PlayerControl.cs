@@ -26,6 +26,7 @@ public class PlayerControl : MonoBehaviour
     public AudioSource mainMusic;
     bool checkEnd;
     bool checkEndLast;
+    bool checkFirst;
     public GameObject hddI;
     public GameObject bat1;
     public GameObject bat2;
@@ -45,12 +46,32 @@ public class PlayerControl : MonoBehaviour
         doubleJump = 1;
         checkEnd = false;
         checkEndLast = false;
+        checkFirst = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (checkEnd == false)
+        if (checkFirst == true)
+        {
+            Vector2 position = transform.position;
+            position.x = position.x + 1f * Time.deltaTime;
+            transform.position = position;
+            transform.rotation = Quaternion.identity;
+            animator.SetFloat("Speed", 0.1f);
+            animator.SetFloat("Horizontal", 0.1f);
+            animator.SetBool("IsJumping", false);
+        }
+        if (checkFirst == false && haveHDD == false)
+        {
+            Vector2 position = transform.position;
+            position.x = position.x + 0 * Time.deltaTime;
+            transform.position = position;
+            transform.rotation = Quaternion.identity;
+            animator.SetFloat("Speed", 0);
+            animator.SetFloat("Horizontal", 0);
+        }
+        if (checkEnd == false && checkFirst == false)
         {
             float horizontal = Input.GetAxis("Horizontal");
             animator.SetFloat("Speed", Mathf.Abs(horizontal));
@@ -82,7 +103,7 @@ public class PlayerControl : MonoBehaviour
             else
                 animator.SetBool("IsJumping", true);
         }
-        else if (checkEnd == true && checkEndLast == false)
+        else if (checkEnd == true && checkEndLast == false && checkFirst == false)
         {
             Vector2 position = transform.position;
             position.x = position.x + -1f * Time.deltaTime;
@@ -92,7 +113,7 @@ public class PlayerControl : MonoBehaviour
             animator.SetFloat("Horizontal", -0.1f);
             animator.SetBool("IsJumping", false);
         }
-        else if (checkEnd == true && checkEndLast == true)
+        else if (checkEnd == true && checkEndLast == true && checkFirst == false)
         {
             animator.SetFloat("Horizontal", 0);
             animator.SetFloat("Speed", 0);
@@ -140,6 +161,11 @@ public class PlayerControl : MonoBehaviour
         transform.position = new Vector2(-3.5f, 18.2f);
     }
 
+    public void StartCheck()
+    {
+        checkFirst = false;
+    }
+
     public void Reset() {
         Time.timeScale = 1f;
         gameObject.SetActive(true);
@@ -155,6 +181,7 @@ public class PlayerControl : MonoBehaviour
         garb1.SetActive(true);
         mainMusic.Play();
         gameOverUI.SetActive(false);
+        checkFirst = true;
     }
 
     public void RechargeJump()
