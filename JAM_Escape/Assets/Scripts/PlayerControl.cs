@@ -195,7 +195,7 @@ public class PlayerControl : MonoBehaviour
     public void CheckStop()
     {
         checkStop = true;
-        Invoke("ExitMenu", 3.0f);
+        Invoke("ExitMenu", 5.0f);
     }
 
     public void Reset() {
