@@ -1,6 +1,6 @@
 # Subject
 
-**Theme:** Escape 
+**Theme:** Escape  
 **Time:** 48h  
 **Secondary objectives implemented:**  
     - Star  
@@ -12,7 +12,7 @@
 Introducing ***Prime One***  
   
 A platform game made in Unity 2D  
-Game made during EPITECH's 2nd Game Jam (April 24 -> April 26 2020)  
+Game made during EPITECH's 3rd Game Jam (April 24 -> April 26 2020)  
 /!\ Game only playable on windows /!\  
 For complete informations about the game read the manual :)  
   
