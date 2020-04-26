@@ -13,10 +13,12 @@ public class PlayerControl : MonoBehaviour
     public GameObject Garbage;
     float jumpVelocity;
     int doubleJump;
+    Vector3 originalPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        originalPos = gameObject.transform.position;
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         renderer = gameObject.GetComponent<SpriteRenderer>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
