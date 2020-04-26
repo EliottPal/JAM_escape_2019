@@ -14,6 +14,8 @@ public class PlayerControl : MonoBehaviour
     public GameObject Garbage;
     float jumpVelocity;
     int doubleJump;
+    public AudioSource alert;
+    public bool haveHDD = false;
     public AudioSource death;
     public GameObject gameOverUI;
     Vector3 originalPos;
@@ -110,5 +112,18 @@ public class PlayerControl : MonoBehaviour
 
     public void ExitMenu() {
         SceneManager.LoadScene("MenuScene");
+    }
+
+    IEnumerator OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("HDD"))
+        {
+            other.gameObject.SetActive(false);
+            alert.Play();
+            yield return new WaitForSeconds(1);
+            haveHDD = true;
+            laser.SetActive(true);
+
+        }
     }
 }

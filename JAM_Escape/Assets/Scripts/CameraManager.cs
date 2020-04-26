@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     public float forwardSpeed;
+    public PlayerControl player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +15,11 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0f, forwardSpeed * Time.deltaTime, 0f, null);
-        if (transform.position.y >= 16.45)
-            forwardSpeed = 0;
+        if (player.haveHDD == true)
+        {
+            transform.Translate(0f, forwardSpeed * Time.deltaTime, 0f, null);
+            if (transform.position.y >= 16.45)
+               forwardSpeed = 0;
+        }
     }
 }
