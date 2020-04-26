@@ -21,6 +21,8 @@ public class PlayerControl : MonoBehaviour
     Vector3 originalPos;
     public Camera mainCamera;
     public GameObject laser;
+
+    public GameObject levelComplete;
     Vector3 camPos;
     Vector3 laserPos;
     public AudioSource mainMusic;
@@ -150,6 +152,11 @@ public class PlayerControl : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void levelCompletedMessage()
+    {
+        levelComplete.SetActive(true);
+    }
+
     public void EndCheck()
     {
         checkEnd = true;
@@ -202,7 +209,7 @@ public class PlayerControl : MonoBehaviour
             yield return new WaitForSeconds(1);
             haveHDD = true;
             laser.SetActive(true);
-
+            levelComplete.SetActive(true);
         }
     }
 }
