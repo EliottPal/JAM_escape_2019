@@ -15,6 +15,9 @@ public class PlayerControl : MonoBehaviour
     float jumpVelocity;
     int doubleJump;
     public AudioSource alert;
+
+    public AudioSource victory;
+
     public bool haveHDD = false;
     public AudioSource death;
     public GameObject gameOverUI;
@@ -126,6 +129,8 @@ public class PlayerControl : MonoBehaviour
             animator.SetFloat("Speed", 0.1f);
             animator.SetFloat("Horizontal", 1f);
             animator.SetBool("IsJumping", false);
+            levelComplete.SetActive(true);
+            victory.Play();
         }
     }
 
@@ -209,7 +214,6 @@ public class PlayerControl : MonoBehaviour
             yield return new WaitForSeconds(1);
             haveHDD = true;
             laser.SetActive(true);
-            levelComplete.SetActive(true);
         }
     }
 }
