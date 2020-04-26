@@ -24,6 +24,8 @@ public class PlayerControl : MonoBehaviour
     Vector3 camPos;
     Vector3 laserPos;
     public AudioSource mainMusic;
+    bool checkEnd;
+    bool checkEndLast;
 
     // Start is called before the first frame update
     void Start()
@@ -36,40 +38,65 @@ public class PlayerControl : MonoBehaviour
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         doubleJump = 1;
+        checkEnd = false;
+        checkEndLast = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
-        animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-
-        Vector2 position = transform.position;
-        position.x = position.x + 2.8f * horizontal * Time.deltaTime;
-        transform.position = position;
-        transform.rotation = Quaternion.identity;
-
-        if (IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)))
+        if (checkEnd == false)
         {
-            jumpVelocity = 4f;
-            rigidbody2d.velocity = Vector2.up * jumpVelocity;
-        }
-        if (!IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)) && doubleJump > 0)
-        {
-            doubleJump--;
-            jumpVelocity = 4f;
-            rigidbody2d.velocity = Vector2.up * jumpVelocity;
-        }
+            float horizontal = Input.GetAxis("Horizontal");
+            animator.SetFloat("Speed", Mathf.Abs(horizontal));
+            animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
 
-        if (Input.GetKeyDown(KeyCode.S))
-            animator.SetBool("IsCrouch", true);
-        else
-            animator.SetBool("IsCrouch", false);
-        if (IsGrounded())
+            Vector2 position = transform.position;
+            position.x = position.x + 2.8f * horizontal * Time.deltaTime;
+            transform.position = position;
+            transform.rotation = Quaternion.identity;
+
+            if (IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)))
+            {
+                jumpVelocity = 4f;
+                rigidbody2d.velocity = Vector2.up * jumpVelocity;
+            }
+            if (!IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)) && doubleJump > 0)
+            {
+                doubleJump--;
+                jumpVelocity = 4f;
+                rigidbody2d.velocity = Vector2.up * jumpVelocity;
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+                animator.SetBool("IsCrouch", true);
+            else
+                animator.SetBool("IsCrouch", false);
+            if (IsGrounded())
+                animator.SetBool("IsJumping", false);
+            else
+                animator.SetBool("IsJumping", true);
+        }
+        else if (checkEnd == true && checkEndLast == false)
+        {
+            Vector2 position = transform.position;
+            position.x = position.x + -1f * Time.deltaTime;
+            transform.position = position;
+            transform.rotation = Quaternion.identity;
+            animator.SetFloat("Speed", 0.1f);
+            animator.SetFloat("Horizontal", -0.1f);
             animator.SetBool("IsJumping", false);
-        else
-            animator.SetBool("IsJumping", true);
+        }
+        else if (checkEnd == true && checkEndLast == true)
+        {
+            Vector2 position = transform.position;
+            position.x = position.x + 1f * Time.deltaTime;
+            transform.position = position;
+            transform.rotation = Quaternion.identity;
+            animator.SetFloat("Speed", 0.1f);
+            //animator.SetFloat("Horizontal", 1f);
+            animator.SetBool("IsJumping", false);
+        }
     }
 
     private bool IsGrounded()
@@ -93,6 +120,17 @@ public class PlayerControl : MonoBehaviour
         gameObject.SetActive(false);
         gameOverUI.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void EndCheck()
+    {
+        checkEnd = true;
+    }
+
+    public void EndCheckLast()
+    {
+        checkEndLast = true;
+        transform.position = new Vector2(-3.3f, 18.8f);
     }
 
     public void Reset() {
