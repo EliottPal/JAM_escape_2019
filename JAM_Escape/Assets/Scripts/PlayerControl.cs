@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     private SpriteRenderer renderer;
     public GameObject Garbage;
     float jumpVelocity;
-    bool doubleJump;
+    int doubleJump;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class PlayerControl : MonoBehaviour
         renderer = gameObject.GetComponent<SpriteRenderer>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        doubleJump = true;
+        doubleJump = 1;
     }
 
     // Update is called once per frame
@@ -41,9 +41,9 @@ public class PlayerControl : MonoBehaviour
             jumpVelocity = 4f;
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
         }
-        if (!IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)) && doubleJump)
+        if (!IsGrounded() && (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown(KeyCode.Z)) && doubleJump > 0)
         {
-            doubleJump = false;
+            doubleJump--;
             jumpVelocity = 4f;
             rigidbody2d.velocity = Vector2.up * jumpVelocity;
         }
@@ -74,7 +74,7 @@ public class PlayerControl : MonoBehaviour
 
     public void RechargeJump()
     {
-        doubleJump = true;
+        doubleJump++;
     }
 
     public void ExitMenu() {
