@@ -37,6 +37,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject bat2;
     public GameObject bat3;
     public GameObject garb1;
+    float forwardSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -184,6 +185,8 @@ public class PlayerControl : MonoBehaviour
         transform.position = originalPos;
         laser.transform.position = laserPos;
         mainCamera.transform.position = camPos;
+        mainCamera.GetComponent<CameraManager>().forwardSpeed = (float)0.3;
+        laser.GetComponent<LaserManage>().forwardSpeed = (float)0.3;
         haveHDD = false;
         laser.SetActive(false);
         hddI.SetActive(true);

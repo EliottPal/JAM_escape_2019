@@ -17,6 +17,7 @@ public class CameraManager : MonoBehaviour
     {
         if (player.haveHDD == true)
         {
+            forwardSpeed *= (float)1.0001;
             transform.Translate(0f, forwardSpeed * Time.deltaTime, 0f, null);
             if (transform.position.y >= 20)
                forwardSpeed = 0;
