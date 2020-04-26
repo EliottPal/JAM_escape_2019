@@ -15,10 +15,19 @@ public class PlayerControl : MonoBehaviour
     float jumpVelocity;
     int doubleJump;
     public AudioSource death;
+    public GameObject gameOverUI;
+    Vector3 originalPos;
+    public Camera mainCamera;
+    public GameObject laser;
+    Vector3 camPos;
+    Vector3 laserPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        originalPos = transform.position;
+        camPos = mainCamera.transform.position;
+        laserPos = laser.transform.position;
         rigidbody2d = transform.GetComponent<Rigidbody2D>();
         renderer = gameObject.GetComponent<SpriteRenderer>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
@@ -78,8 +87,18 @@ public class PlayerControl : MonoBehaviour
     {
         death.Play();
         gameObject.SetActive(false);
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
+    public void Reset() {
+        Time.timeScale = 1f;
+        gameObject.SetActive(true);
+        transform.position = originalPos;
+        laser.transform.position = laserPos;
+        mainCamera.transform.position = camPos;
+        gameOverUI.SetActive(false);
+    }
 
     public void RechargeJump()
     {
