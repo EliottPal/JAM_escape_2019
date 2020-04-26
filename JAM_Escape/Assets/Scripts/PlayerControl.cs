@@ -29,9 +29,12 @@ public class PlayerControl : MonoBehaviour
     Vector3 camPos;
     Vector3 laserPos;
     public AudioSource mainMusic;
+
     bool checkEnd;
     bool checkEndLast;
     bool checkFirst;
+    bool checkStop;
+
     public GameObject hddI;
     public GameObject bat1;
     public GameObject bat2;
@@ -53,6 +56,7 @@ public class PlayerControl : MonoBehaviour
         checkEnd = false;
         checkEndLast = false;
         checkFirst = true;
+        checkStop = false;
     }
 
     // Update is called once per frame
@@ -77,7 +81,7 @@ public class PlayerControl : MonoBehaviour
             animator.SetFloat("Speed", 0);
             animator.SetFloat("Horizontal", 0);
         }
-        if (checkEnd == false && checkFirst == false)
+        if (checkEnd == false && checkFirst == false && checkStop == false)
         {
             float horizontal = Input.GetAxis("Horizontal");
             animator.SetFloat("Speed", Mathf.Abs(horizontal));
@@ -109,7 +113,7 @@ public class PlayerControl : MonoBehaviour
             else
                 animator.SetBool("IsJumping", true);
         }
-        else if (checkEnd == true && checkEndLast == false && checkFirst == false)
+        else if (checkEnd == true && checkEndLast == false && checkFirst == false && checkStop == false)
         {
             Vector2 position = transform.position;
             position.x = position.x + -1f * Time.deltaTime;
@@ -119,7 +123,7 @@ public class PlayerControl : MonoBehaviour
             animator.SetFloat("Horizontal", -0.1f);
             animator.SetBool("IsJumping", false);
         }
-        else if (checkEnd == true && checkEndLast == true && checkFirst == false)
+        else if (checkEnd == true && checkEndLast == true && checkFirst == false && checkStop == false)
         {
             animator.SetFloat("Horizontal", 0);
             animator.SetFloat("Speed", 0);
@@ -132,6 +136,14 @@ public class PlayerControl : MonoBehaviour
             animator.SetBool("IsJumping", false);
             levelComplete.SetActive(true);
             victory.Play();
+        }
+        if (checkStop == true)
+        {
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Speed", 0);
+            Vector2 position = transform.position;
+            position.x = position.x + 0 * Time.deltaTime;
+            transform.position = position;
         }
     }
 
@@ -177,6 +189,11 @@ public class PlayerControl : MonoBehaviour
     public void StartCheck()
     {
         checkFirst = false;
+    }
+
+    public void CheckStop()
+    {
+        checkStop = true;
     }
 
     public void Reset() {
