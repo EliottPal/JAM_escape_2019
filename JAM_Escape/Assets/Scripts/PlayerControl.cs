@@ -26,8 +26,10 @@ public class PlayerControl : MonoBehaviour
     public AudioSource mainMusic;
     bool checkEnd;
     bool checkEndLast;
-
     public GameObject hddI;
+    public GameObject bat1;
+    public GameObject bat2;
+    public GameObject bat3;
 
     // Start is called before the first frame update
     void Start()
@@ -144,6 +146,9 @@ public class PlayerControl : MonoBehaviour
         haveHDD = false;
         laser.SetActive(false);
         hddI.SetActive(true);
+        bat1.SetActive(true);
+        bat2.SetActive(true);
+        bat3.SetActive(true);
         mainMusic.Play();
         gameOverUI.SetActive(false);
     }

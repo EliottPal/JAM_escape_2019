@@ -19784,6 +19784,9 @@ MonoBehaviour:
   laser: {fileID: 1178023175}
   mainMusic: {fileID: 245714410}
   hddI: {fileID: 2109783011}
+  bat1: {fileID: 2098523616}
+  bat2: {fileID: 28743886}
+  bat3: {fileID: 245392738}
 --- !u!61 &874291681
 BoxCollider2D:
   m_ObjectHideFlags: 0
