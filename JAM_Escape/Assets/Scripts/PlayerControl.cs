@@ -30,6 +30,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject bat1;
     public GameObject bat2;
     public GameObject bat3;
+    public GameObject garb1;
 
     // Start is called before the first frame update
     void Start()
@@ -151,6 +152,7 @@ public class PlayerControl : MonoBehaviour
         bat1.SetActive(true);
         bat2.SetActive(true);
         bat3.SetActive(true);
+        garb1.SetActive(true);
         mainMusic.Play();
         gameOverUI.SetActive(false);
     }

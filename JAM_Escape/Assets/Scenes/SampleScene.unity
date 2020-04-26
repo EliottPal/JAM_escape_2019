@@ -364,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2d: {fileID: 807024075}
+  garbage: {fileID: 0}
 --- !u!50 &807024075
 Rigidbody2D:
   serializedVersion: 4
@@ -379,7 +380,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -398,7 +399,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0010796785}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -407,9 +408,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.33}
+  m_Size: {x: 0.30930036, y: 0.31920242}
   m_EdgeRadius: 0
 --- !u!212 &807024077
 SpriteRenderer:
@@ -449,7 +450,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: dfa09ec9284a6384aac1621cf629dfdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -739,7 +740,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.032609463, y: -0.08967596}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -750,7 +751,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.71, y: 0.67}
+  m_Size: {x: 0.22738022, y: 0.4906481}
   m_EdgeRadius: 0
 --- !u!50 &1507480356
 Rigidbody2D:
@@ -875,3 +876,14 @@ MonoBehaviour:
   rigidbody2d: {fileID: 1507480356}
   boxCollider2d: {fileID: 1507480355}
   Garbage: {fileID: 807024073}
+  alert: {fileID: 0}
+  haveHDD: 0
+  death: {fileID: 0}
+  gameOverUI: {fileID: 0}
+  mainCamera: {fileID: 0}
+  laser: {fileID: 0}
+  mainMusic: {fileID: 0}
+  hddI: {fileID: 0}
+  bat1: {fileID: 0}
+  bat2: {fileID: 0}
+  bat3: {fileID: 0}
