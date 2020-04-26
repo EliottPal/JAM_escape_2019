@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class BackCredsMenu : MonoBehaviour
 {
-    public void BackMenu() {
-        SceneManager.LoadScene("MenuScene");
+    void OnMouseOver() {
+        if (Input.GetMouseButtonDown(0)) {
+            SceneManager.LoadScene("MenuScene");
+        }
     }
 }
