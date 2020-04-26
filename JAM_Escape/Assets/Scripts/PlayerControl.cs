@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -74,5 +75,9 @@ public class PlayerControl : MonoBehaviour
     public void RechargeJump()
     {
         doubleJump = true;
+    }
+
+    public void ExitMenu() {
+        SceneManager.LoadScene("MenuScene");
     }
 }
