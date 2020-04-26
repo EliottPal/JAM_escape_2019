@@ -17875,6 +17875,7 @@ GameObject:
   - component: {fileID: 694439209}
   - component: {fileID: 694439208}
   - component: {fileID: 694439207}
+  - component: {fileID: 694439210}
   m_Layer: 0
   m_Name: Laser 2
   m_TagString: Untagged
@@ -17900,7 +17901,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 19.19, y: 2.5}
-    newSize: {x: 0.64, y: 0.14}
+    newSize: {x: 19.19, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -17947,12 +17948,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 695b84ad0ca686343a9b170241da3c60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7621ed336ca64d14eaa064dd26180a80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.14}
+  m_Size: {x: 19.19, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -17972,6 +17973,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &694439210
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694439206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6210f74e8bffbd4c91ae803df6260c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &695246188
 GameObject:
   m_ObjectHideFlags: 0
@@ -19519,6 +19539,7 @@ GameObject:
   - component: {fileID: 1178023177}
   - component: {fileID: 1178023176}
   - component: {fileID: 1178023178}
+  - component: {fileID: 1178023179}
   m_Layer: 0
   m_Name: Huge_Laser
   m_TagString: Untagged
@@ -19565,7 +19586,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 695b84ad0ca686343a9b170241da3c60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7621ed336ca64d14eaa064dd26180a80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19603,6 +19624,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forwardSpeed: 0.3
+--- !u!95 &1178023179
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178023175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2b56f052768e874dbe8d6e6c6bbe764, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1188891599
 GameObject:
   m_ObjectHideFlags: 0
@@ -19614,6 +19654,7 @@ GameObject:
   - component: {fileID: 1188891602}
   - component: {fileID: 1188891601}
   - component: {fileID: 1188891600}
+  - component: {fileID: 1188891603}
   m_Layer: 0
   m_Name: Laser 3
   m_TagString: Untagged
@@ -19639,7 +19680,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 19.19, y: 2.5}
-    newSize: {x: 0.64, y: 0.14}
+    newSize: {x: 19.19, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -19686,12 +19727,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 695b84ad0ca686343a9b170241da3c60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7621ed336ca64d14eaa064dd26180a80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.14}
+  m_Size: {x: 19.19, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19711,6 +19752,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!95 &1188891603
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188891599}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 227750dc72efaf94b9ae234745c3dbb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1211204513
 GameObject:
   m_ObjectHideFlags: 0
@@ -22488,6 +22548,7 @@ GameObject:
   - component: {fileID: 1706518159}
   - component: {fileID: 1706518158}
   - component: {fileID: 1706518157}
+  - component: {fileID: 1706518160}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -22513,7 +22574,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 19.19, y: 2.5}
-    newSize: {x: 0.64, y: 0.14}
+    newSize: {x: 19.19, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -22560,12 +22621,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 695b84ad0ca686343a9b170241da3c60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7621ed336ca64d14eaa064dd26180a80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.14}
+  m_Size: {x: 19.19, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -22585,6 +22646,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!95 &1706518160
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706518156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6603bd458af2bde4ea39c07465f38241, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1743488383
 GameObject:
   m_ObjectHideFlags: 0
