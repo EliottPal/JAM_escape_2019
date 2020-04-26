@@ -93,12 +93,14 @@ public class PlayerControl : MonoBehaviour
         }
         else if (checkEnd == true && checkEndLast == true)
         {
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Speed", 0);
             Vector2 position = transform.position;
             position.x = position.x + 1f * Time.deltaTime;
             transform.position = position;
             transform.rotation = Quaternion.identity;
             animator.SetFloat("Speed", 0.1f);
-            //animator.SetFloat("Horizontal", 1f);
+            animator.SetFloat("Horizontal", 1f);
             animator.SetBool("IsJumping", false);
         }
     }
@@ -134,7 +136,7 @@ public class PlayerControl : MonoBehaviour
     public void EndCheckLast()
     {
         checkEndLast = true;
-        transform.position = new Vector2(-3.3f, 18.8f);
+        transform.position = new Vector2(-3.5f, 18.2f);
     }
 
     public void Reset() {

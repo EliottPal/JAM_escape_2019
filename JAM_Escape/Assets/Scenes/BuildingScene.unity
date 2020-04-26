@@ -18578,7 +18578,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.19, y: 2.5}
+  m_Size: {x: 19.19, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &694439208
 SpriteRenderer:
@@ -21071,7 +21071,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.19, y: 2.5}
+  m_Size: {x: 19.19, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &1188891601
 SpriteRenderer:
@@ -24226,7 +24226,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.19, y: 2.5}
+  m_Size: {x: 19.19, y: 2}
   m_EdgeRadius: 0
 --- !u!212 &1706518158
 SpriteRenderer:

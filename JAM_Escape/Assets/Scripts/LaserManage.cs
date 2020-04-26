@@ -15,7 +15,7 @@ public class LaserManage : MonoBehaviour
     void Update()
     {
         transform.Translate(0f, forwardSpeed * Time.deltaTime, 0f, null);
-        if (transform.position.y >= 16.45)
+        if (transform.position.y >= 15)
             forwardSpeed = 0;
     }
 }
