@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Security.Cryptography;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject Garbage;
     float jumpVelocity;
     int doubleJump;
+    public AudioSource death;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +73,13 @@ public class PlayerControl : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void LaserCheck()
+    {
+        death.Play();
+        gameObject.SetActive(false);
+    }
+
 
     public void RechargeJump()
     {
